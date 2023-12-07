@@ -59,4 +59,4 @@ def registro(request):
             return redirect('login')
 
     context = {'form': form, 'cliente_form': cliente_form}
-    return render(request, 'Clientes/register.html', context)
+    return render(request, 'Clientes/registro.html', context)
