@@ -1,0 +1,22 @@
+{% extends 'Clientes/base.html' %}
+
+{% block content %}
+
+<h1> Cuentas del cliente {{ cliente }}</h1>
+{% if cuentas|length > 0 %}
+<div>
+    {% for cuenta in cuentas %}
+    <div>
+        <h2>{{ cuenta }}</h2>
+        <p>Saldo: ${{ cuenta.balance }}</p>
+        <p>IBAN: {{ cuenta.iban }}</p>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<h2>No posee ninguna cuenta.</h2>
+<p> <a href="#">Click aquí para agregar</a></p>
+{% endif %}
+
+
+{% endblock %}

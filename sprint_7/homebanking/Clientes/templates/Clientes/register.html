@@ -1,0 +1,55 @@
+{% extends 'Inicio/base.html' %}
+
+{% block content %}
+<section>
+    <h1 class="h1-contacto">Registrar usuario</h1>
+    <form action="" method="POST" class="form-container">
+        {% csrf_token %}
+        <div>
+            {{ form.username.errors }}
+            <label class="label" for="username"> Nombre de usuario </label>
+            {{ form.username }}
+        </div>
+        <div>
+            <label class="label" for="name"> Nombre </label>
+            {{ cliente_form.name }}
+        </div>
+        <div>
+            <label class="label" for="surname"> Apellido </label>
+            {{ cliente_form.surname }}
+        </div>
+        <div>
+            <label class="label" for="dni"> DNI </label>
+            {{ cliente_form.dni }}
+        </div>
+        <div>
+            <label class="label" for="dob"> Fecha de nacimiento </label>
+            {{ cliente_form.dob }}
+        </div>
+        <div>
+            <label class="label" for="branch"> Sucursal </label>
+            {{ cliente_form.branch }}
+        </div>
+        <div>
+            <label class="label" for="tipo"> Tipo de cliente </label>
+            {{ cliente_form.tipo }}
+        </div>
+        <div>
+            {{ form.password1.errors }}
+            <label class="label" for="password1"> Contraseña </label>
+            {{ form.password1 }}
+        </div>
+        <div>
+            {{ form.password2.errors }}
+            <label class="label" for="password1"> Confirmar contraseña </label>
+            {{ form.password2 }}
+        </div>
+        <input type="submit" value="Crear Usuario" class="boton-form">
+        <br>
+        {{ form.non_field_errors }}
+        <p>¿Ya tiene un usuario activo? <a href="{% url 'login' %}">Iniciar sesión</a></p>
+    </form>
+</section>
+
+
+{% endblock %}

@@ -1,0 +1,89 @@
+/*del sprint 1*/
+label {
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    color: black;
+    font-size: large;
+    padding: 1%;
+}
+
+/* ESTILOS PARA QUE LOS H1 SE CENTREN */
+.h1-center {
+    text-align: center;
+    color: #81007f;
+    font-family: 'Lato', sans-serif;
+}
+
+/* ESTILOS PARA LOS FORM */
+.form-container {
+    background-color: #ffffff;
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 5%;
+    text-align: center;
+}
+
+/* ESTILOS PARA LOS INPUTS */
+.campo-form {
+    max-width: 100%;
+    padding: 2%;
+    margin: 1%;
+    border: none;
+    border-bottom: 2px solid #e4d4d6 ;
+    outline: none;
+    transition: border-bottom 0.3s ease;
+    text-align: center;
+}
+
+.campo-form:hover {
+    border-bottom: 2px solid #c97c63;
+}
+
+/* ESTILOS PARA LOS BOTONES */
+.boton-form {
+    background-color: #81007f;
+    width: auto;
+    padding: 10px;
+    margin: 1% auto;
+    color: #ffffff;
+    border: none;
+    transition: border-bottom 0.3s ease;
+}
+
+.boton-form:hover {
+    color: #c97c63
+}
+
+.boton-form a{
+    text-decoration: none;
+    color: white;
+}
+
+/* ESTILOS PARA LOS SELECT */
+.tipo {
+    text-align: center;
+    border-width: 2px;
+    border-color: #35103D;
+    padding: 1%;
+    background-color: #e4d4d6;
+    width: 30%;
+    margin: auto;
+}
+
+/* ESTILOS PARA DIV --> DE CONFIRMACION*/
+#container-form {
+    text-align: center;
+}
+
+#container-form p {
+    font-size: 150%;
+    color: green;
+    padding: 30px;
+}
+#container-form .icon {
+    font-size: 24px;
+    color: green;
+}

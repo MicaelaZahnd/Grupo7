@@ -1,0 +1,22 @@
+{% extends 'Clientes/base.html' %}
+
+{% block content %}
+<h1> Préstamos de {{ cliente }}</h1>
+{% if prestamos|length > 0 %}
+<div>
+    {% for prestamo in prestamos %}
+    <div>
+        <strong>
+            <p>{{ prestamo }}</p>
+        </strong>
+        <strong>
+            <p>{{ prestamo.estado }}</p>
+        </strong>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<h2>No ha solicitado ningún préstamo. </h2>
+<p><a href="{% url 'prestamo' cliente.id %}">Haz click aquí para solicitar</a></p>
+{% endif %}
+{% endblock %}
