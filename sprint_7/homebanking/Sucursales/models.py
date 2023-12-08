@@ -14,4 +14,4 @@ class Sucursal(models.Model):
 
 
     def __str__(self):
-        return self.branch_name + "con id = " + str(self.branch_id)
+        return self.branch_name + "/n con id = " + str(self.branch_id)

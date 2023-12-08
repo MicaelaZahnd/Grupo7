@@ -7,6 +7,12 @@ from django.contrib.auth.models import User
 class Tipo_Cliente(models.Model):
     client_type = models.CharField(max_length=30)
 
+    class Meta:
+        db_table = 'tipo_cliente'
+        verbose_name = "Tipo_Cliente"
+        verbose_name_plural = "Tipos_Clientes"
+
+
     def __str__(self):
         return self.client_type 
     
