@@ -1,27 +1,22 @@
 {% extends 'Inicio/base.html' %}
-
-{% load static %}
 {% block content %}
-
+<section>
   <div>
     <form action="" method="post">{% csrf_token %}
       <h1 class="h1-contacto">Iniciar sesión</h1>
       {% if form.non_field_errors %}
-        <p style="color:red">Usuario o contraseña incorrectos, prueba de nuevo.</p>
+      <p style="color:red">Usuario o contraseña incorrectos, prueba de nuevo.</p>
       {% endif %}
-      
       <p>
         <input class="campo-form" type="text" name="username" autofocus maxlength="254" required
           placeholder="Nombre de usuario" />
       </p>
-      
       <p>
         <input class="campo-form" type="password" name="password" required placeholder="Clave" />
       </p>
-      
-      <p><input class="boton-form" type="submit" value="Ingresar"></p>
+      <p><input class="boton-form" type="submit" value="Acceder"></p>
     </form>
   </div>
   <p><a href="#">Olvidó su clave?</a></p>
-
+</section>
 {% endblock %}

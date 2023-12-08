@@ -1,8 +1,7 @@
 {% extends 'Inicio/base.html' %}
 
 {% block content %}
+<p>Ya te vas? Esperamos que vuelvas pronto! Que tengas un buen día.</p>
 
-<p>Has salido de la sesión!.</p>
-<a href="{% url 'login'%}">Haz clic aca para iniciar sesión nuevamente.</a>
-
+<a href="{% url 'login'%}">Volver iniciar sesión.</a>
 {% endblock %}
