@@ -64,7 +64,7 @@ def registro(request):
     context = {'form': form, 'cliente_form': cliente_form}
     return render(request, 'Clientes/register.html', context)
 
-def login(request):
+def signin(request):
     form = user_auth_form()
     
     if request.method == 'GET':
@@ -86,6 +86,11 @@ def login(request):
         form.add_error(None, 'Usuario invalido.')
         return render(request, 'registration/login.html', {'form': form})
 #        return render(request, 'registration/login.html', {'form': form})
+
+    login(request, user)
+            # set user-specific data in the session
+    request.session['username'] = username
+    request.session.save()
 
     client= Cliente.objects.get(usuario=user)
     cuentas = Cuenta.objects.filter(client_id__exact = client.client_id)

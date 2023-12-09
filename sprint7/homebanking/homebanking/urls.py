@@ -37,7 +37,7 @@ urlpatterns = [
     path('sucursales/', vista4.list_branch, name="sucursales"),
     path('prestamos/<int:client_id>/', vista5.loan, name="prestamo"),
     path('misprestamos/<int:client_id>/', vista5.client_loan, name="prestamos_cliente"),
-    path('accounts/login/', vista.login, name="login"),
+    path('accounts/login/', vista.signin, name="login"),
     path('accounts/',include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
 ]

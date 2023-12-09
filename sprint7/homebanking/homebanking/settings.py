@@ -58,6 +58,10 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "homebanking.urls"
 
+SESSION_COOKIE_SECURE = False
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+
+
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
