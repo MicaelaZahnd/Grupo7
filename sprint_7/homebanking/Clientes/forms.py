@@ -12,3 +12,8 @@ class client_form(forms.ModelForm):
     class Meta:
         model = Cliente
         fields = ['name', 'surname', 'dni', "dob", "branch", "type"]
+
+class user_auth_form(UserCreationForm):
+    class Meta:
+        model = User
+        fields = ['username', 'password']

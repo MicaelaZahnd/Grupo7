@@ -2,8 +2,10 @@ from django.http import HttpResponseForbidden
 from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .forms import user_form, client_form
+from .forms import user_form, client_form, user_auth_form
 from .models import Cliente
+from django.contrib.auth.models import User
+from django.contrib.auth.hashers import check_password
 import os
 
 # Create your views here.
@@ -53,10 +55,39 @@ def registro(request):
             cliente.save()
 
             messages.success(request, 'Cuenta creada exitosamente')
+            return render('registration/login.html')
         else:
             messages.error(request, "Form is not valid. Please check your input.")
 
-            return redirect('login')
 
     context = {'form': form, 'cliente_form': cliente_form}
     return render(request, 'Clientes/register.html', context)
+
+def login(request):
+    form = user_auth_form()
+    
+    if request.method == 'GET':
+        context = {'form': form}
+        return render(request, 'registration/login.html', context)
+    
+    if request.method != 'POST':
+         return render('')
+    
+    form= user_auth_form(request.POST)
+    username = request.POST.get('username')
+    password = request.POST.get('password')
+
+    form.is_valid()
+
+    try:
+        user = User.objects.get(username=username)
+    except User.DoesNotExist:
+        form.add_error('username', 'Usuario invalido.')
+        return render(request, 'registration/login.html', {'form': form})
+    
+    if check_password(password, user.password):
+    #hace lo del user auth
+        return render(request, 'Clientes/base.html', {'user': user})
+    else:
+        form.add_error('password', 'Contraseña incorrecta.')
+        return render(request, 'registration/login.html',  {'form': form})
