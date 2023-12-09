@@ -7,28 +7,28 @@ import Footer from "./footerHB";
 import { Card, CardContent } from "@mui/material";
 
 // Define la URL de la API de bancos
-const banksApiUrl = "http://127.0.0.1:8000/api/banks/";
+const sucurApiUrl = "http://127.0.0.1:8000/api/sucur/";
 
 // Componente para la nueva página de bancos
-function BanksPage() {
+function SucurPage() {
   // Estado para almacenar la información de los bancos
-  const [banks, setBanks] = useState([]);
+  const [sucur, setSucur] = useState([]);
 
   // Efecto para cargar los bancos al montar la página
   useEffect(() => {
-    const fetchBanks = async () => {
+    const fetchSucur = async () => {
       try {
         // Realiza la solicitud a la API de bancos
-        const response = await axios.get(banksApiUrl);
+        const response = await axios.get(sucurApiUrl);
         // Almacena la información de los bancos en el estado
-        setBanks(response.data);
+        setSucur(response.data);
       } catch (error) {
-        console.error("Error fetching banks from the API:", error);
+        console.error("Error fetching sucur from the API:", error);
       }
     };
 
     // Llama a la función para cargar los bancos
-    fetchBanks();
+    fetchSucur();
   }, []);
 
   // Renderiza la página de bancos
@@ -40,9 +40,8 @@ function BanksPage() {
         <div className="main-container">
           <main>
             <section>
-              <h1>Listado de Bancos</h1>
-              {/* Mapea la información de los bancos y muestra cada uno como un div */}
-              {banks.map((bank) => (
+              <h1>Listado de Sucursales</h1>
+              {sucur.map((bank) => (
                 <div
                   key={bank.id}
                   className="bank-info"
@@ -62,4 +61,4 @@ function BanksPage() {
   );
 }
 
-export default BanksPage;
+export default SucurPage;

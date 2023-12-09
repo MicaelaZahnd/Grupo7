@@ -29,14 +29,14 @@ def loan(request, client_id):
 
             if form_prestamo.is_valid() and cuenta:
 
-                tipoRecibido = form_prestamo.cleaned_data['loan_type']
-                fechaRecibida = form_prestamo.cleaned_data['loan_date']
-                montoRecibido = form_prestamo.cleaned_data['loan_ammount']
+                tipoRecibido = form_prestamo.cleaned_data['tipo']
+                fechaRecibida = form_prestamo.cleaned_data['fecha']
+                montoRecibido = form_prestamo.cleaned_data['monto']
 
-                def create_prestamo_and_update_balance(loan_type, loan_date, loan_ammount, loan_preapproval, client_id):
-                    prestamo = Prestamo(loan_type=loan_type, loan_date=loan_date, loan_ammount=loan_ammount, loan_preapproval=loan_preapproval, client_id = client_id)
+                def create_prestamo_and_update_balance(tipo, fecha, monto, estado, client_id):
+                    prestamo = Prestamo(tipo=tipo, fecha=fecha, monto=monto, estado=estado, client_id = client_id)
                     prestamo.save()
-                    cuenta.balance = cuenta.balance + int(loan_ammount)
+                    cuenta.balance = cuenta.balance + int(monto)
                     cuenta.save()
 
                 if datetime.strptime(fechaRecibida, '%Y-%m-%d') > datetime.today():
