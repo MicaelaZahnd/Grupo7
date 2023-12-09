@@ -1,6 +1,6 @@
 # Grupo7
 
-Relización de la entrega del sprint 7
+Relización de la entrega del sprint 8
 
 Integrantes:
 - Romero Rosales, Victoria Camila

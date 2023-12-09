@@ -1,6 +1,9 @@
+from django.shortcuts import render
 from rest_framework import viewsets
 from .models import Cuenta
 from .serializers import CuentaSerializer
+
+# Create your views here.
 
 class CuentaViewSet(viewsets.ModelViewSet):
     queryset = Cuenta.objects.all()

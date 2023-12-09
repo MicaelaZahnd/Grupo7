@@ -1,8 +1,8 @@
-
 from django.db import models
-from bancos.models import Banco
+from Sucursales.models import Sucursal
 from django.contrib.auth.models import User
 
+# Create your models here.
 
 class Cliente(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -10,7 +10,7 @@ class Cliente(models.Model):
     apellido = models.CharField(max_length=100)
     dni = models.IntegerField(unique=True)
     fecha_nacimiento = models.DateTimeField()
-    banco = models.ForeignKey(Banco, on_delete=models.CASCADE)
+    banco = models.ForeignKey(Sucursal, on_delete=models.CASCADE)
     tipo_cliente = models.CharField(max_length=10, default="CLASSIC", choices=(('BLACK', 'BLACK'), ('GOLD','GOLD'), ('CLASSIC', 'CLASSIC')))
 
     def __str__(self):

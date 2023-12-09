@@ -1,7 +1,6 @@
-from django.shortcuts import render
 from rest_framework import viewsets
 from .models import Sucursal
-from .serializers import DireccionSerializer
+from .serializers import SucursalSerializer
 
 # Create your views here.
 

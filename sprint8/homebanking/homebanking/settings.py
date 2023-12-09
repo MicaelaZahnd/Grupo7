@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    'homebanking.apps.HomebankingConfig',
     'Sucursales.apps.SucursalesConfig',
     'Clientes.apps.ClientesConfig',
     'Cuentas.apps.CuentasConfig',
@@ -56,6 +55,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    
 ]
 
 ROOT_URLCONF = "homebanking.urls"
