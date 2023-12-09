@@ -1,0 +1,14 @@
+{% extends 'Clientes/base.html' %}
+
+{% block content %}
+
+<h1> Total de Cuentas </h1>
+{% for cuenta in cuentas %}
+<div>
+    <p> {{ cuenta }} </p>
+    <p> {{ cuenta.iban }} </p>
+    <p> {{ cuenta.cliente }} </p>
+</div>
+{% endfor %}
+
+{% endblock %}

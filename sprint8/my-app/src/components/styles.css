@@ -1,0 +1,376 @@
+h1,
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: #ff7344;
+}
+ul{
+    padding-left: 0;
+}
+
+/* MENU BURGUER */
+.navbar {
+    background: #ff8d01;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.nav-toggle {
+    display: none;
+}
+
+/*/////////////////////////////////////////////////////////////*/
+/* STYLES LANDING PAGE */
+#banner {
+    text-align: center;
+}
+
+#banner h1 {
+    margin-top: 220px;
+    font-size: 180%;
+    margin-bottom: 3%;
+    color: white;
+}
+
+#banner p {
+    font-size: 100%;
+    margin: 2%;
+    font-weight: bold;
+    color: rgb(251, 251, 251);
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #000000;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.cta-button:hover {
+    background-color: white;
+    color: #ff7344;
+}
+
+#features {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 0;
+    background-color: #fff;
+}
+
+.feature {
+    text-align: center;
+    max-width: 300px;
+    margin: 0 20px;
+}
+
+.service img {
+    width: 50%;
+    height: 50%;
+}
+
+.ul-LandingPage {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    list-style: none;
+    width: 50%;
+}
+
+.ul-LandingPage li {
+    margin: 3%;
+}
+
+.ul-LandingPage a {
+    text-decoration: none;
+    color: white;
+}
+
+.sectionLandingPage {
+    padding: 100px;
+}
+
+/*/////////////////////////////////////////////////////////////*/
+
+/* NAV */
+nav li {
+    list-style-type: none;
+    padding: 4%;
+    margin: 2%;
+}
+
+nav li:hover {
+    border-left: solid 4px #FF7344;
+}
+
+li a {
+    text-decoration: none;
+    color: white;
+}
+
+li a:hover {
+    color: #FF7344;
+}
+
+.ul-nav {
+    padding-left: 0px;
+    margin: 0%;
+}
+
+/* MAIN */
+.sub-container {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    padding-left: 250px
+}
+
+.main-container {
+    padding: 50px;
+}
+
+/* HEADER */
+
+header {
+    background-color: #35103D;
+    position: fixed;
+    width: 80%;
+}
+
+/* FOOTER */
+footer {
+    background-color: #C2B2B4;
+    text-align: center;
+    max-height: 100%;
+    width: 100%;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+#container-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#container-politica-empresa {
+    float: left;
+    width: 50%;
+    margin: 2%;
+}
+
+#container-politica-empresa a:hover {
+    color: #ff7344;
+}
+
+#redes {
+    float: right;
+    width: 50%;
+    margin: 2%;
+}
+
+#redes p {
+    margin: 0;
+}
+
+/* DIVS --> BACKGROUNDS WHITE */
+.card {
+    background-color: white;
+    width: 40%;
+    padding: 3%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 1%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    vertical-align: top;
+}
+
+.chart {
+    width: 100%;
+    height: 200px;
+}
+
+.card {
+    max-width: 100%;
+}
+
+.chart {
+    width: 100%;
+    height: 200px;
+}
+
+/* /////////////////////////////////////////////////////////// */
+
+/* ALL STYLES FORMS */
+label {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    color: black;
+    font-size: medium;
+    padding: 1%;
+}
+
+/* H1 CENTER */
+.h1-center {
+    text-align: center;
+    color: #81007f;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+/* FORM */
+.form-container {
+    background-color: #ffffff;
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 5%;
+    text-align: center;
+}
+
+/* DIVS --> CONFIRMATION TRANSFER*/
+#container-form {
+    text-align: center;
+}
+
+#container-form p {
+    font-size: 150%;
+    color: green;
+    padding: 30px;
+}
+
+#container-form .icon {
+    font-size: 24px;
+    color: green;
+}
+
+/* /////////////////////////////////////////////////////////// */
+
+/* MEDIAS */
+@media (max-width: 780px) {
+
+    /* MENU BURGUER */
+    .nav-items {
+        position: inherit;
+        top: 0;
+        left: 0;
+        background: black;
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        height: -webkit-fill-available;
+        transform: translateX(-100%);
+        transition: 0.3s ease all;
+    }
+
+    .nav-items.open {
+        transform: translateX(0) !important
+    }
+
+    .nav-toggle {
+        display: flex !important;
+        flex-direction: column;
+        margin: 15px;
+    }
+
+    .nav-toggle span {
+        width: 30px;
+        height: 2px;
+        background: white;
+        margin-bottom: 5px;
+        border-radius: 2px;
+        transform-origin: 5px 0px;
+        transition: all 0.2s linear;
+    }
+
+    .nav-toggle.open>span {
+        transform: rotate(45deg) translate(0px, 0px);
+    }
+
+    .nav-toggle.open>span:nth-child(2) {
+        display: none;
+    }
+
+    .nav-toggle.open>span:nth-child(3) {
+        transform: rotate(-45deg) translate(-5px, 1px);
+    }
+
+    /* HB */
+    .card {
+        width: 90%;
+    }
+
+    .sub-container {
+        padding-left: 0px;
+    }
+
+    header {
+        width: 100%;
+    }
+
+    /*LANDING PAGE*/
+}
+
+@media (max-width: 500px) {
+
+    /* ALL */
+    h1,h2, h3 {
+        font-size: 80%;
+    }
+
+    /* LANDING PAGE */
+    #banner h1 {
+        font-size: 100%;
+        margin-bottom: 1%;
+        margin-top: 40%;
+    }
+
+    .ul-LandingPage{
+        flex-direction: column;
+        padding-left: 0px;
+        margin: 0;
+    }
+    #features {
+        flex-direction: column;
+    }
+    .ul-LandingPage a{
+        font-size: 12px;
+    }
+    .sectionLandingPage {
+        padding: 100px 10px;
+    } 
+    .logo-landingpage{
+        height: 70px;
+    }
+
+    /* BURGUER MENU */
+    .nav-items {
+        width: 80%;
+    }
+
+    /* HB */
+    .main-container {
+        padding: 20px;
+    }
+
+    /* FOOTER */
+    #container-footer {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #container-politica-empresa,
+    #redes {
+        width: 100%;
+    }
+}

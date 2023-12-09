@@ -1,0 +1,321 @@
+/*del sprint 1*/
+
+/* ESTILOS PARA TODOS LOS HTML DEL LANDING */
+body,
+h1,
+h2,
+p,
+ul,
+li,
+a {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: black;
+}
+
+h1,
+h2 {
+    font-family: 'Lato', sans-serif;
+    color: #FF7344;
+}
+
+header {
+    width: 100%;
+    height: 15%;
+    position: fixed;
+    background-color: #35103D;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#logo-banco {
+    width: 15%;
+    padding: 10px;
+
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+nav li {
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+nav a:hover {
+    color: #ff7344;
+
+}
+
+nav li:hover {
+    border-bottom: #ff7344 solid 1px;
+}
+
+section {
+    padding: 13% 8%;
+}
+
+footer {
+    background-color: rgb(23, 23, 23);
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    height: 120px;
+    width: 100%;
+    color: white;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+#container-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#container-politica-empresa {
+    float: left;
+    width: 50%;
+    margin: 1%;
+}
+
+#container-politica-empresa a:hover {
+    color: #FF7344;
+}
+
+#container-politica-empresa a:hover {
+    transition: border-bottom 0.3s ease;
+}
+
+#redes {
+    float: right;
+    width: 50%;
+    margin: 1%;
+}
+
+#redes i {
+    font-size: x-large;
+    color: #FF7344;
+}
+
+#redes i:hover {
+    color: #35103D;
+}
+
+#redes p {
+    margin: 0;
+}
+
+/* ESTILOS PARA EL INDEX */
+#banner {
+    background-image: url("/static/Inicio/img/Banco.webp");
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 150px 0;
+}
+
+#banner h1 {
+    margin-top: 50px;
+    font-size: 200%;
+    margin-bottom: 2%;
+    color: white;
+}
+
+#banner p {
+    font-size: 100%;
+    margin: 2%;
+    font-weight: bold;
+    color: rgb(251, 251, 251);
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #000000;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.cta-button:hover {
+    background-color: white;
+    color: #ff7344;
+}
+
+#features {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 0;
+    background-color: #fff;
+}
+
+.feature {
+    text-align: center;
+    max-width: 300px;
+    margin: 0 20px;
+}
+
+.service img {
+    width: 50%;
+    height: 50%;
+}
+
+/* MENU HAMBURGUESA */
+.btn-menu {
+    display: none;
+}
+
+/* MEDIAS QUERIES*/
+
+@media (max-width: 320px) {
+    body {
+        font-size: 12px;
+    }
+
+    header {
+        height: 6%;
+    }
+
+    nav li {
+        margin: 5px;
+    }
+
+    section {
+        padding: 25% 5%;
+    }
+
+    #banner h1 {
+        font-size: 140%;
+    }
+
+    #banner p {
+        font-size: 80%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    /* MENU HAMBURGUESA */
+    .btn-menu,
+    .btn-close {
+        display: block;
+        background: #35103D;
+        color: white;
+    }
+
+    nav {
+        opacity: 0;
+        visibility: hidden;
+        display: none;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        gap: 1rem;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #35103D;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+    }
+
+    nav.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: end;
+    }
+    /* PAGINA */
+    #features {
+        flex-direction: column;
+    }
+
+    .feature {
+        margin: auto;
+    }
+
+    section {
+        padding: 30% 10%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    header {
+        height: 8%;
+    }
+
+    nav ul {
+        justify-content: space-evenly;
+    }
+
+    nav li {
+        margin: 8px;
+    }
+
+    #container-footer {
+        flex-direction: row;
+    }
+}
+
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    body {
+        font-size: 16px;
+    }
+
+    header {
+        height: 15%;
+    }
+
+    nav li {
+        margin: 10px;
+    }
+
+    section {
+        padding: 12% 8%;
+    }
+
+
+}
+
+@media (min-width: 1400px) {
+    body {
+        font-size: 20px;
+    }
+
+    header {
+        height: 25%;
+    }
+
+    nav li {
+        margin: 15px;
+    }
+
+    section {
+        padding: 10% 5%;
+    }
+}

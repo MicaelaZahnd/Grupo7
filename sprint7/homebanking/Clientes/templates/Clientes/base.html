@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITBANK</title>
+    <link rel="stylesheet" href="{% static 'Clientes/css/style.css' %}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container">
+        <button class="btn-menu" id="btn-open"><i class="fa-solid fa-bars"></i></button> 
+        <nav id="nav">
+            <div class="container-nav">
+                <button class="btn-menu" id="btn-close"><i
+                        class="fa-solid fa-xmark"></i></button>
+                <a href="{% url 'inicio' %}">
+                    <img src="{% static 'Clientes/img/logo.webp' %}" alt="logo" id="logo">
+                </a>
+                <ul>
+                    <li><a href="{% url 'cuentas_cliente' client_id=cliente.client_id %}"> Cuentas</a></li>
+                    <li><a href="{% url 'tarjetas_cliente' client_id=cliente.client_id %}"> Tarjetas </a></li>
+                    <li><a href="{% url 'prestamos_cliente' client_id=cliente.client_id %}">Préstamos</a></li>
+                    <li><a href="{% url 'prestamo' client_id=cliente.client_id %}"> Solicitud de Préstamos</a></li>
+                    <li><a href="#">Pagos</a> </li>
+                    <li><a href="#">Transferencias</a></li>
+                    <li><a href="#">Plazo fijo</a></li>
+                    <li><a href="#">Convertidor de moneda</a></li>
+                    <li><a href="#">Mis Movimientos</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="hola">
+            <header>
+                <a href="{% url 'detalle_cliente' client_id=cliente.client_id %}"><img src="{% static 'Clientes/img/usuario.png' %}" alt="Mi cuenta"height="40" id="perfilusuario"></a>
+            </header>
+            <main>
+                {% block content %}{% endblock %}
+            </main>
+            <footer>
+                <div id="container-footer">
+                    <div id="container-politica-empresa">
+                        <a href="#">Políticas de privacidad.</a>
+                        <br><a href="#">Términos y Condiciones</a>
+                        <br><a href="#">Contacto</a>
+                    </div>
+                    <div id="redes">
+                        <p>Encontranos en:</p>
+                        <a href="https://www.instagram.com/" width="20" target="_blank"><i
+                                class="fa-brands fa-square-instagram"></i></a>
+                        <a href="https://www.twitter.com/" width="20" target="_blank"><i
+                                class="fa-brands fa-square-twitter"></i></a>
+                        <a href="https://www.facebook.com/" width="20" target="_blank"><i
+                                class="fa-brands fa-square-facebook"></i></a>
+                    </div>
+                </div>
+                <p id="copy">&copy; 2023 ITBANK. Todos los derechos reservados.</p>
+            </footer>
+        </div>
+        <!--  SCRIPT DEFONT AWESOME (ICONOS) -->
+    <script src="https://kit.fontawesome.com/86d4c52489.js" crossorigin="anonymous"></script>
+        <!-- SCRIPTS -->
+        <script src="{% static 'Clientes/js/menu.js' %}"></script>
+        <script src="{% static 'Clientes/js/menu-hamburguesa.js' %}"></script>    
+</body>
+
+</html>

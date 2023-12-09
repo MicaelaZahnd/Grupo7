@@ -1,0 +1,354 @@
+/*del sprint 1*/
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    background-color: whitesmoke;
+    height: 100%;
+}
+
+h1,
+h2 {
+    font-family: 'Lato', sans-serif;
+    color: #ff7344;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    min-height: 100%;
+}
+
+.contenedor-area-principal {
+    padding-bottom: 120px;
+}
+
+/* NAV */
+nav {
+    width: 20%;
+    float: left;
+    background-color: rgb(23, 23, 23);
+    color: white;
+}
+
+.container-nav {
+    position: fixed;
+    width: 20%;
+    float: left;
+    height: 100%;
+}
+
+#logo {
+    width: 50%;
+    padding: 0% 25%;
+}
+
+/* #nav {
+    margin: 5%;
+    padding-left: 0;
+    max-width: 100%;
+    text-align: center;
+} */
+
+#nav li {
+    list-style-type: none;
+    text-align: start;
+    padding: 4%;
+    margin: 2%;
+}
+
+#nav li:hover {
+    border-left: solid 4px #FF7344;
+}
+
+li a {
+    text-decoration: none;
+    color: white;
+}
+
+li a:hover {
+    color: #FF7344;
+}
+
+#li-a-select {
+    border-left: solid 4px #FF7344;
+}
+
+/* HEADER */
+.hola {
+    width: 80%;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header {
+    background-color: #35103D;
+    text-align: end;
+    position: fixed;
+    width: 80%;
+}
+
+header a {
+    color: white;
+    font-family: 'Lato', sans-serif;
+}
+
+header a:hover {
+    color: #FF7344;
+}
+
+#perfilusuario {
+    margin: 2%;
+    height: 35px;
+}
+
+/* MAIN */
+main {
+    margin-top: 80px;
+    padding: 3%;
+}
+
+section {
+    padding: 3%;
+}
+
+/* FOOTER */
+footer {
+    background-color: #C2B2B4;
+    text-align: center;
+    max-height: 100%;
+    width: 100%;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+#container-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#container-politica-empresa {
+    float: left;
+    width: 50%;
+    margin: 2%;
+}
+
+#container-politica-empresa a:visited {
+    color: #35103D;
+}
+
+#redes {
+    float: right;
+    width: 50%;
+    margin: 2%;
+}
+
+#redes i {
+    font-size: x-large;
+    color: #35103D;
+    transition: 0.5s;
+}
+
+#redes i:hover {
+    color: #FF7344;
+}
+
+#redes p {
+    margin: 0;
+}
+
+
+
+/* ESTILOS PARA DIVS --> FONDOS BLANCOS */
+.card {
+    background-color: white;
+    width: 40%;
+    padding: 3%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 1%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    vertical-align: top;
+}
+
+.card h2 {
+    margin-top: 0;
+}
+
+.chart {
+    width: 100%;
+    height: 200px;
+}
+
+
+.card {
+    max-width: 100%;
+}
+
+.chart {
+    width: 100%;
+    height: 200px;
+}
+
+/* ESTILOS PARA BOTONES */
+.btn {
+    background: #35103D;
+    padding: 1%;
+    margin: 1%;
+    color: white;
+    border: 1px solid grey;
+}
+
+.btn a {
+    text-decoration: none;
+    color: white;
+}
+
+.btn:hover {
+    background-color: #35103d81;
+}
+
+
+
+/* ESTILOS CORTO DE LOS HTMLS */
+
+/* TABLAS */
+.tab-movimientos {
+    text-align: left;
+    background-color: white;
+    max-width: 100%;
+    margin: 4% auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tab-movimientos td,
+.tab-movimientos th {
+    border: solid 1px black;
+}
+
+/* POSICIONARSE EN EL MENU */
+.focused {
+    color: #FF7344;
+    outline: none;
+    font-size: 17px;
+}
+
+/* MENU HAMBURGUESA */
+.btn-menu {
+    display: none;
+}
+
+/* MEDIAS QUERIES */
+@media screen and (max-width: 768px) {
+
+    /* MENU HAMBURGUESA */
+    .btn-menu,
+    .btn-close {
+        display: block;
+        background: rgb(23, 23, 23);
+        color: white;
+    }
+
+    nav {
+        opacity: 0;
+        visibility: hidden;
+        display: none;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        gap: 1rem;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+        width: 30%;
+    }
+
+    nav.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: end;
+        padding-left: 0;
+    }
+
+    /* RESTO PAGINA */
+
+    .container {
+        flex-direction: column;
+    }
+
+    .container-nav {
+        position: static;
+        width: 100%;
+    }
+
+    header {
+        width: 100%;
+        position: revert;
+    }
+
+    .hola {
+        width: 100%;
+        float: none;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    .chart {
+        height: 150px;
+    }
+    main{
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    nav {
+        width: 60%;
+    }
+
+    .chart {
+        height: 120px;
+    }
+
+    #container-footer {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #container-politica-empresa {
+        float: none;
+        width: 90%;
+        margin: 3%;
+    }
+
+    #redes {
+        float: none;
+        width: 90%;
+        margin: 3%;
+    }
+
+    .tab-movimientos td,
+    .tab-movimientos th {
+        font-size: x-small;
+    }
+}
