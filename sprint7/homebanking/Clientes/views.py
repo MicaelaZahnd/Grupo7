@@ -88,9 +88,7 @@ def signin(request):
 #        return render(request, 'registration/login.html', {'form': form})
 
     login(request, user)
-            # set user-specific data in the session
-    request.session['username'] = username
-    request.session.save()
+
 
     client= Cliente.objects.get(usuario=user)
     cuentas = Cuenta.objects.filter(client_id__exact = client.client_id)
